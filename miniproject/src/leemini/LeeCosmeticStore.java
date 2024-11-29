@@ -7,6 +7,7 @@ public class LeeCosmeticStore {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
+        // hi
         
         while (true) {
             System.out.println("\n=== 화장품 가게 프로그램 ===");
