@@ -7,6 +7,7 @@ public class Product {
     private int quantity; // 재고 개수
     private String description;
     private String skinType;
+    
 
     public Product(String name, String brand, int volume, int quantity, String description, String skinType) {
         this.name = name;
