@@ -6,6 +6,8 @@ public class JeonProduct {
     private int volume; // 용량 (ml)
     private int quantity; // 재고 개수
     private String description;
+    
+    //hi from jeon
 
     public JeonProduct(String name, String brand, int volume, int quantity, String description) {
         this.name = name;
