@@ -7,11 +7,7 @@ public class CosmeticStore {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        
-        //안녕하세요
-        
-        //hi from jeon
-        
+                
         while (true) {
             System.out.println("\n=== 화장품 가게 프로그램 ===");
             System.out.println("1. 화장품 종류 보기");
