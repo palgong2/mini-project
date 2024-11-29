@@ -1,6 +1,8 @@
 package jeonmini;
 
-import java.util.*;
+import java.util.List;
+import java.util.Map;
+import java.util.Scanner;
 
 public class JeonCosmeticStore {
     private static JeonProductRepository repository = new JeonProductRepository();
