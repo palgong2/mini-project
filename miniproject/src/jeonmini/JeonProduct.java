@@ -1,6 +1,6 @@
 package jeonmini;
 
-public class Product {
+public class JeonProduct {
     private String name;
     private String brand;
     private int volume; // 용량 (ml)
@@ -9,7 +9,7 @@ public class Product {
     private String skinType;
     
 
-    public Product(String name, String brand, int volume, int quantity, String description, String skinType) {
+    public JeonProduct(String name, String brand, int volume, int quantity, String description, String skinType) {
         this.name = name;
         this.brand = brand;
         this.volume = volume;
