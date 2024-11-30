@@ -7,20 +7,23 @@ public class OkCosmeticStore {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        
+
         while (true) {
             System.out.println("\n=== 화장품 가게 프로그램 ===");
             System.out.println("1. 화장품 종류 보기");
-            System.out.println("0. 종료");
+            System.out.println("3. 재고 변경 (관리자)");
+            System.out.println("4. 종료");
             System.out.print("메뉴를 선택하세요: ");
             int choice = scanner.nextInt();
             scanner.nextLine(); // 버퍼 비우기
 
-            if (choice == 0) {
+            if (choice == 4) {
                 System.out.println("프로그램을 종료합니다.");
                 break;
             } else if (choice == 1) {
                 showProductTypes(scanner);
+            } else if (choice == 3) {
+                handleStockManagement(scanner); // 재고 관리 처리
             } else {
                 System.out.println("잘못된 입력입니다. 다시 시도하세요.");
             }
@@ -71,5 +74,16 @@ public class OkCosmeticStore {
             }
         }
         return null;
+    }
+
+    // 재고 관리 (관리자 권한)
+    private static void handleStockManagement(Scanner scanner) {
+        if (!OkProductManager.checkAdminPassword(scanner)) {
+            System.out.println("잘못된 비밀번호입니다.");
+            return;
+        }
+
+        Map<String, List<OkProduct>> cosmetics = repository.getCosmetics();
+        OkProductManager.manageStock(cosmetics, scanner); // 재고 관리 위임
     }
 }
