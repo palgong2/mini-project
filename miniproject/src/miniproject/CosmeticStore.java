@@ -1,6 +1,8 @@
 package miniproject;
 
-import java.util.*;
+import java.util.List;
+import java.util.Map;
+import java.util.Scanner;
 
 public class CosmeticStore {
     private static ProductRepository repository = new ProductRepository();
@@ -11,6 +13,7 @@ public class CosmeticStore {
         while (true) {
             System.out.println("\n=== 화장품 가게 프로그램 ===");
             System.out.println("1. 화장품 종류 보기");
+            System.out.println("3. 재고 변경 (관리자)");
             System.out.println("0. 종료");
             System.out.print("메뉴를 선택하세요: ");
             int choice = scanner.nextInt();
@@ -21,6 +24,8 @@ public class CosmeticStore {
                 break;
             } else if (choice == 1) {
                 showProductTypes(scanner);
+            } else if (choice == 3) {
+                handleStockManagement(scanner); // 재고 관리 처리
             } else {
                 System.out.println("잘못된 입력입니다. 다시 시도하세요.");
             }
@@ -71,5 +76,16 @@ public class CosmeticStore {
             }
         }
         return null;
+    }
+
+    // 재고 관리 (관리자 권한)
+    private static void handleStockManagement(Scanner scanner) {
+        if (!ProductManager.checkAdminPassword(scanner)) {
+            System.out.println("잘못된 비밀번호입니다.");
+            return;
+        }
+
+        Map<String, List<Product>> cosmetics = repository.getCosmetics();
+        ProductManager.manageStock(cosmetics, scanner); // 재고 관리 위임
     }
 }
