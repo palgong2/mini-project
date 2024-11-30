@@ -20,7 +20,8 @@
 
 ## 📂 디렉토리 구조
 
-![디렉토리 구조]([./directory.png](https://github.com/user-attachments/assets/3c7e0949-60ba-4236-a710-3038a05c9ff0))
+<img width="188" alt="directory" src="https://github.com/user-attachments/assets/3c7e0949-60ba-4236-a710-3038a05c9ff0">
+
 
 <ul>
   <li><span style="color:#A7C7E7;">jeonmini/ # 전유민 작성 코드</span></li>
