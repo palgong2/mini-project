@@ -7,7 +7,6 @@ public class JeonProduct {
     private int quantity; // 재고 개수
     private String description;
     private String skinType;
-    
 
     public JeonProduct(String name, String brand, int volume, int quantity, String description, String skinType) {
         this.name = name;
@@ -24,10 +23,22 @@ public class JeonProduct {
         System.out.println("용량: " + volume + "ml");
         System.out.println("재고 개수: " + quantity);
         System.out.println("설명: " + description);
-        System.out.println("피부Type: " + skinType);
+        System.out.println("피부타입: " + skinType);
     }
 
     public String getName() {
         return name;
+    }
+    
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
+    }
+    
+    public String getSkinType() {
+    	return skinType;
     }
 }
