@@ -23,10 +23,18 @@ public class Product {
         System.out.println("용량: " + volume + "ml");
         System.out.println("재고 개수: " + quantity);
         System.out.println("설명: " + description);
-        System.out.println("피부Type: " + skinType);
+        System.out.println("피부타입: " + skinType);
     }
 
     public String getName() {
         return name;
+    }
+
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
     }
 }
