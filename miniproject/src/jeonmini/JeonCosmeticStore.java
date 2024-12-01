@@ -105,7 +105,7 @@ public class JeonCosmeticStore {
         String userSkinType = scanner.nextLine();
 
         List<JeonProduct> recommendedProducts = new ArrayList<>();
-
+//
         
         for (Map<String, List<JeonProduct>> subCategoryMap : cosmetics.values()) {
             for (List<JeonProduct> productList : subCategoryMap.values()) {
