@@ -3,7 +3,7 @@ package okmini;
 import java.util.*;
 
 public class OkProductRepository {
-    private Map<String, Map<String, List<OkProduct>>> cosmetics;
+    private Map<String, List<OkProduct>> cosmetics;
 
     public OkProductRepository() {
         cosmetics = new HashMap<>();
@@ -11,29 +11,23 @@ public class OkProductRepository {
     }
 
     private void initializeProducts() {
-        cosmetics.put("스킨케어", new HashMap<>());
-        cosmetics.put("베이스", new HashMap<>());
-        cosmetics.put("클렌징", new HashMap<>());
-
-        cosmetics.get("스킨케어").put("미스트", Arrays.asList(
-                new OkProduct("수분미스트", "브랜드A", 100, 10, "건조한 피부를 촉촉하게.", "건성"),
-                new OkProduct("진정미스트", "브랜드B", 120, 8, "민감한 피부를 진정시켜줍니다.", "민감성")
-        ));
-        cosmetics.get("스킨케어").put("토너", Arrays.asList(
-                new OkProduct("진정토너", "브랜드C", 300, 20, "민감한 피부에 적합.", "지성"),
-                new OkProduct("미백토너", "브랜드D", 250, 15, "피부 톤을 밝게.", "모든 피부")
-        ));
-        cosmetics.get("스킨케어").put("로션", Arrays.asList(
-                new OkProduct("수분로션", "브랜드E", 200, 12, "건조한 피부에 수분 공급.", "건성"),
-                new OkProduct("영양로션", "브랜드F", 250, 8, "피부 영양 공급.", "모든 피부")
+        cosmetics.put("클렌징폼", Arrays.asList(
+                new OkProduct("딥클렌징폼", "브랜드A", 150, 10, "모든 피부 타입에 적합한 클렌징폼.","지성"),
+                new OkProduct("수분클렌징폼", "브랜드B", 200, 5, "수분을 공급해주는 클렌징폼.","지성")
         ));
 
-        cosmetics.get("클렌징").put("클렌징폼", Arrays.asList(
-                new OkProduct("딥클렌징폼", "브랜드G", 150, 10, "모공 속까지 깨끗하게.", "모든 피부")
+        cosmetics.put("토너", Arrays.asList(
+                new OkProduct("진정토너", "브랜드C", 300, 20, "민감한 피부에 적합한 진정 토너.","지성"),
+                new OkProduct("미백토너", "브랜드D", 250, 15, "피부 톤을 밝게 해주는 미백 토너.","지성")
+        ));
+
+        cosmetics.put("로션", Arrays.asList(
+                new OkProduct("수분로션", "브랜드E", 200, 12, "건조한 피부에 수분을 제공.","지성"),
+                new OkProduct("영양로션", "브랜드F", 250, 8, "피부에 영양을 공급.","지성")
         ));
     }
 
-    public Map<String, Map<String, List<OkProduct>>> getCosmetics() {
+    public Map<String, List<OkProduct>> getCosmetics() {
         return cosmetics;
     }
 }
