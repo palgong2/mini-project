@@ -7,6 +7,7 @@ public class CosmeticStore {
 
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
+		
 
 		// mainmenu 출력
 		while (true) {
