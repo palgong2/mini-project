@@ -3,7 +3,7 @@ package miniproject;
 import java.util.*;
 
 public class ProductRepository {
-    private Map<String, List<Product>> cosmetics;
+    private Map<String, Map<String, List<Product>>> cosmetics;
 
     public ProductRepository() {
         cosmetics = new HashMap<>();
@@ -103,7 +103,7 @@ public class ProductRepository {
         ));
     }
 
-    public Map<String, List<Product>> getCosmetics() {
+    public Map<String, Map<String, List<Product>>> getCosmetics() {
         return cosmetics;
     }
 }
