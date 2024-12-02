@@ -62,7 +62,52 @@ public class JeonCosmeticStore {
                 System.out.println("입력한 제품을 찾을 수 없습니다.");
             }
         } else {
-            System.out.println("입력한 화장품 종류가 없습니다.");
+            System.out.println("입력한 대분류가 없습니다.");
+        }
+    }
+    
+    private static void cosmeticsRecommendation(Scanner scanner) {
+
+    	Set<String> skinTypes = new HashSet<>();
+
+        Map<String, Map<String, List<JeonProduct>>> cosmetics = repository.getCosmetics();
+        for (Map<String, List<JeonProduct>> subCategoryMap : cosmetics.values()) {
+            for (List<JeonProduct> productList : subCategoryMap.values()) {
+                for (JeonProduct product : productList) {
+                    skinTypes.add(product.getSkinType());
+                }
+            }
+        }
+
+        System.out.println("다음 중 자신의 피부 타입을 입력해주세요:");
+        for (String type : skinTypes) {
+            System.out.println("- " + type);
+        }
+
+        System.out.print("피부 타입을 입력하세요: ");
+        String userSkinType = scanner.nextLine();
+
+        List<JeonProduct> recommendedProducts = new ArrayList<>();
+//
+        
+        for (Map<String, List<JeonProduct>> subCategoryMap : cosmetics.values()) {
+            for (List<JeonProduct> productList : subCategoryMap.values()) {
+                for (JeonProduct product : productList) {
+                    if (product.getSkinType().equalsIgnoreCase(userSkinType)) {
+                        recommendedProducts.add(product);
+                    }
+                }
+            }
+        }
+
+        // 추천 제품 출력
+        if (recommendedProducts.isEmpty()) {
+            System.out.println("해당 피부 타입에 맞는 추천 제품이 없습니다.");
+        } else {
+            System.out.println("\n=== 추천 제품 리스트 ===");
+            for (JeonProduct product : recommendedProducts) {
+                System.out.println("- " + product.getName());
+            }
         }
     }
 
