@@ -1,11 +1,6 @@
 package miniproject;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Map;
-import java.util.Scanner;
-import java.util.Set;
+import java.util.*;
 
 public class CosmeticStore {
 	private static ProductRepository repository = new ProductRepository();
@@ -13,6 +8,7 @@ public class CosmeticStore {
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
 		
+
 		// mainmenu 출력
 		while (true) {
 			System.out.println("\n=== 화장품 가게 프로그램 ===");
