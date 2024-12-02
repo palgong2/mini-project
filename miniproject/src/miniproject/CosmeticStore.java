@@ -8,7 +8,6 @@ public class CosmeticStore {
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
 		
-
 		// mainmenu 출력
 		while (true) {
 			System.out.println("\n=== 화장품 가게 프로그램 ===");
