@@ -31,6 +31,14 @@
 
 ---
 
+## 📝 화장품 가게 플로차트
+
+<img width="404" alt="화장품가게플로차트" src="https://github.com/user-attachments/assets/dbcb0def-ca17-4b3a-9784-105a1642db0b">
+
+
+
+---
+
 ## 🛠️ 주요 기능 설명
 
 ### 1. 화장품 검색 기능 (이다정)
