@@ -9,8 +9,7 @@ public class LeeProduct {
     private String skinType;
     private String price;
 
-    public LeeProduct(String name, String brand, int volume, int quantity, String description, 
-    		String skinType, String price) {
+    public LeeProduct(String name, String brand, int volume, int quantity, String description, String skinType, String price) {
         this.name = name;
         this.brand = brand;
         this.volume = volume;
@@ -26,11 +25,19 @@ public class LeeProduct {
         System.out.println("용량: " + volume + "ml");
         System.out.println("재고 개수: " + quantity);
         System.out.println("설명: " + description);
-        System.out.println("피부Type: " + skinType);
+        System.out.println("피부타입: " + skinType);
         System.out.println("가격: " + price);
     }
 
     public String getName() {
         return name;
+    }
+
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
     }
 }
