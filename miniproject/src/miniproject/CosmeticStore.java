@@ -7,7 +7,6 @@ public class CosmeticStore {
 
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
-		
 
 		// mainmenu 출력
 		while (true) {
@@ -17,8 +16,13 @@ public class CosmeticStore {
 			System.out.println("3. 재고 변경 (관리자)");
 			System.out.println("4. 종료");
 			System.out.print("메뉴를 선택하세요: ");
-			int choice = scanner.nextInt();
-			scanner.nextLine();
+			int choice;
+			try {
+				choice = Integer.parseInt(scanner.nextLine()); // 사용자 입력을 정수로 변환
+			} catch (NumberFormatException e) {
+				System.out.println("잘못된 입력입니다. 숫자만 입력하세요.");
+				continue; // 잘못된 입력 시 다시 메뉴 출력
+			}
 
 			if (choice == 4) {
 				System.out.println("프로그램을 종료합니다.");
@@ -51,14 +55,14 @@ public class CosmeticStore {
 		String type = scanner.nextLine();
 
 		if (cosmetics.containsKey(type)) {
-			//대분류에대한 소분류 Map(소분류)을 가져오고 그에대한 제품 리스트 출력
+			// 대분류에대한 소분류 Map(소분류)을 가져오고 그에대한 제품 리스트 출력
 			Map<String, List<Product>> subCategories = cosmetics.get(type);
 			System.out.println("\n=== " + type + " 소분류 ===");
 			for (String subType : subCategories.keySet()) {
 				System.out.println("- " + subType);
 			}
-			
-			//입력한 소분류에 대한 제품리스트 출력
+
+			// 입력한 소분류에 대한 제품리스트 출력
 			System.out.print("소분류를 입력하세요: ");
 			String subType = scanner.nextLine();
 
@@ -76,9 +80,9 @@ public class CosmeticStore {
 
 				Product selectedProduct = null;
 
-                // 번호로 검색
-                // try-catch block으로 NumberFormatException 발생시 catch block로 제어 이동
-                // try-catch를 이용하여 번호입력, 제품명 입력을 구분
+				// 번호로 검색
+				// try-catch block으로 NumberFormatException 발생시 catch block로 제어 이동
+				// try-catch를 이용하여 번호입력, 제품명 입력을 구분
 				try {
 					// input변수에 대한 입력이 문자열이였을 경우 Integer.parseInt() 과정에서 NumberFormatException 발생
 					int productNumber = Integer.parseInt(input);
@@ -110,7 +114,8 @@ public class CosmeticStore {
 
 		Set<String> skinTypes = new HashSet<>();
 
-		// 모델클래스(Product.java)에서 skinType를 가져와 skinTypes set(key만있으면되고 중복허용하면안되기떄문에 set 사용)
+		// 모델클래스(Product.java)에서 skinType를 가져와 skinTypes set(key만있으면되고 중복허용하면안되기떄문에 set
+		// 사용)
 		Map<String, Map<String, List<Product>>> cosmetics = repository.getCosmetics();
 		for (Map<String, List<Product>> subCategoryMap : cosmetics.values()) {
 			for (List<Product> productList : subCategoryMap.values()) {
